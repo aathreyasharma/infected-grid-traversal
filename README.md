@@ -1,4 +1,6 @@
-** PROBLEM Statement
+# INFECTED GRID TRAVERSAL
+
+##  Problem Statement:
 
 The Center for Disease Control and Prevention is trying to
 model disease propagation for a particular virus. The virus is known to transmit through human contact and the study aims to simulate how various towns in a region can get infected by the movement of people. The scientists have come up with the following simple
@@ -53,14 +55,13 @@ X = infected --== SAMPLE INPUT AND OUTPUT ==--
 
 
 
-Input:
-
+- First Input:
+```
 {
 
   "grid": {"length": 5, "breadth":  5},
 
-  "infectedCells": [{"x":  1, "y":  1}, {"x":  2,
-"y":  3}],
+  "infectedCells": [{"x":  1, "y":  1}, {"x":  2, "y":  3}],
 
   "persons": [
 
@@ -71,29 +72,22 @@ Input:
   ]
 
 }
-
-
-
-
-
-
+```
 
 
 Expected output:
 
+```
 OOOXX
-
 OOXXX
-
 OXXXX
-
 OXOXO
-
-OOOOO 
+OOOOO
+```
 
 --====--
 
-
+# Dependencies
 
 * Ruby 2.6.3
 
@@ -105,8 +99,10 @@ OOOOO
   * ruby main.rb <input args>
   * Ex
     - Input:
+      ```
       $ ruby main.rb '{"grid": {"length": 5, "breadth":  5},"infectedCells": [{"x":  1, "y":  1}, {"x":  2, "y":  3}],"persons": [{"initialPosition": "1 0 N", "movement": "FFRFFRF"},{"initialPosition": "1 3 S", "movement": "LFFLFRFRFF"}]}'
-      - Output:
+      ```
+      - Expected Output:
         [["0", "0", "0", "X", "X"],
          ["0", "0", "X", "X", "X"],
          ["0", "X", "X", "X", "X"],
@@ -114,8 +110,10 @@ OOOOO
          ["0", "0", "0", "0", "0"]]
 
     - Input with medical centres
+      ```
       $ ruby main.rb '{"grid": {"length": 5, "breadth":  5},"infectedCells": [{"x":  1, "y":  1}, {"x":  2, "y":  3}],"medicalCentres": [{"x":  3, "y":  1}],"persons": [{"initialPosition": "1 0 N", "movement": "FFRFFLF", "type": "citizen"},{"initialPosition": "1 3 S", "movement": "LFFRFFRFFLF", "type": "citizen"}]}'
-      - Output:
+      ```
+      - Expected Output:
         [["0", "0", "0", "0", "0"],
          ["0", "0", "X", "X", "0"],
          ["0", "X", "X", "I", "0"],
@@ -123,13 +121,13 @@ OOOOO
          ["0", "X", "0", "I", "0"]]
 
     - Input with medics
+      ```
       $ ruby main.rb '{"grid": {"length": 5, "breadth":  5},"infectedCells": [{"x":  1, "y":  1}, {"x":  2, "y":  3}],"persons": [{"initialPosition": "1 0 N", "movement": "FFRFFRF", "type": "citizen"},{"initialPosition": "1 3 S", "movement": "LFFLFRFRFF", "type": "citizen"},{"initialPosition": "0 2 N", "movement": "FRFRFLFF", "type": "medic"}]}'
-      - Output:
+      ```
+      - Expected Output:
         [["0", "0", "0", "X", "X"],
          ["0", "0", "X", "X", "X"],
          ["0", "0", "0", "0", "X"],
          ["0", "X", "0", "X", "0"],
          ["0", "0", "0", "0", "0"]]
 
-
-# infected-grid-traversal
